@@ -1,5 +1,7 @@
 <template>
-  <n-space :vertical="true">app-list</n-space>
+  <n-space :vertical="true">
+
+  </n-space>
 </template>
 
 <script lang="ts">
@@ -13,7 +15,9 @@
     },
 
     setup() {
-      return {};
+      return {
+
+      };
     },
   });
 </script>

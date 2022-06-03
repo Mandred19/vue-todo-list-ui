@@ -1,5 +1,5 @@
 <template>
-  <n-layout-content class="app-content">
+  <n-layout-content class="app-body">
     <router-view/>
   </n-layout-content>
 </template>
@@ -9,7 +9,7 @@
   import { NLayoutContent } from 'naive-ui';
 
   export default defineComponent({
-    name: 'app-content',
+    name: 'app-body',
     components: {
       NLayoutContent,
     },
@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss">
-  .app-content {
+  .app-body {
     height: 100%;
     width: 100%;
     overflow: hidden;

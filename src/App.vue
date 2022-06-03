@@ -7,7 +7,9 @@
       <n-layout>
         <app-header/>
 
-        <app-content/>
+        <app-body/>
+
+        <app-footer/>
       </n-layout>
     </n-space>
   </n-config-provider>
@@ -18,7 +20,8 @@
   import { NConfigProvider, enUS, dateEnUS, NSpace, NLayout } from 'naive-ui';
   import themeOverrides from '@/theme';
   import AppHeader from '@/components/app-header/index.vue';
-  import AppContent from '@/components/app-content/index.vue';
+  import AppBody from '@/components/app-body/index.vue';
+  import AppFooter from '@/components/app-footer/index.vue';
 
   export default defineComponent({
     name: 'app',
@@ -27,7 +30,8 @@
       NSpace,
       NLayout,
       AppHeader,
-      AppContent,
+      AppBody,
+      AppFooter,
     },
 
     setup() {
