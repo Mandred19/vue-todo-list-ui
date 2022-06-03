@@ -1,9 +1,11 @@
 <template>
   <div class="app-search">
-    <n-input :value="inputValue"
-             @input="inputHandle($event)"
-             type="text"
-             :placeholder="'Search'"/>
+    <n-input
+    @input="handle($event)"
+    :value="search"
+    :clearable="true"
+    type="text"
+    :placeholder="'Search'"/>
   </div>
 </template>
 
@@ -19,16 +21,16 @@
     emits: ['input'],
 
     setup(props, { emit }) {
-      const inputValue: Ref<string> = ref('');
+      const search: Ref<string> = ref('');
 
-      const inputHandle = (value: string): void => {
-        inputValue.value = value.trim().toLowerCase();
-        emit('input', inputValue.value);
+      const handle = (value: string): void => {
+        search.value = value.trim().toLowerCase();
+        emit('input', search.value);
       };
 
       return {
-        inputValue: readonly(inputValue),
-        inputHandle,
+        search: readonly(search),
+        handle,
       };
     },
   });
