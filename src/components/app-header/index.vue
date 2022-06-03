@@ -43,7 +43,7 @@
 
   .app-header {
     padding: $spacing * 2;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #eee;
     box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%);
   }
 

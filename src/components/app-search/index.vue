@@ -1,12 +1,11 @@
 <template>
-  <div class="app-search">
-    <n-input
-    @input="handle($event)"
-    :value="search"
-    :clearable="true"
-    type="text"
-    :placeholder="'Search'"/>
-  </div>
+  <n-input
+  @input="handle($event)"
+  :value="search"
+  :clearable="true"
+  :size="'large'"
+  type="text"
+  :placeholder="'Filter list'"/>
 </template>
 
 <script lang="ts">
@@ -37,9 +36,5 @@
 </script>
 
 <style lang="scss">
-  @use "src/styles/variables" as *;
 
-  .app-search {
-    padding: $spacing * 2 0;
-  }
 </style>
