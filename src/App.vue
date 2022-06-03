@@ -1,32 +1,45 @@
 <template>
-  <div>app</div>
+  <n-config-provider
+  :locale="enUS"
+  :dateLocale="dateEnUS"
+  :themeOverrides="themeOverrides">
+    <n-space :vertical="true">
+      <n-layout>
+        <app-header/>
+
+        <app-content/>
+      </n-layout>
+    </n-space>
+  </n-config-provider>
 </template>
 
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  import { NConfigProvider, enUS, dateEnUS, NSpace, NLayout } from 'naive-ui';
+  import themeOverrides from '@/theme';
+  import AppHeader from '@/components/app-header/index.vue';
+  import AppContent from '@/components/app-content/index.vue';
+
+  export default defineComponent({
+    name: 'app',
+    components: {
+      NConfigProvider,
+      NSpace,
+      NLayout,
+      AppHeader,
+      AppContent,
+    },
+
+    setup() {
+      return {
+        enUS,
+        dateEnUS,
+        themeOverrides,
+      };
+    },
+  });
+</script>
+
 <style lang="scss">
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-  }
 
-  html, body, #root {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    font-family: 'Roboto', 'Ubuntu', 'Helvetica', sans-serif;
-    font-size: 16px;
-    line-height: normal;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  }
 </style>
