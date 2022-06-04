@@ -1,39 +1,45 @@
 <template>
   <n-modal
   v-model:show="isShowModal"
+  @esc="closeModal"
+  @maskClick="closeModal"
   preset="card"
   size="huge"
   :bordered="false"
-  :title="modalTitle">
+  :title="modalTitle"
+  class="app-modal-wrapper">
     <template #header>
-      <n-h6>
+      <n-h5>
         <n-text>{{ modalTitle }}</n-text>
-      </n-h6>
+      </n-h5>
     </template>
 
     <div>content</div>
 
     <template #action>
-      <n-button @click="closeModal" type="default" size="large">
-        {{ modalResetButtonText }}
-      </n-button>
+      <n-space align="center" justify="end">
+        <n-button @click="closeModal" type="default" size="large">
+          {{ modalResetButtonText }}
+        </n-button>
 
-      <n-button @click="submitHandle" type="info" size="large">
-        {{ modalSubmitButtonText }}
-      </n-button>
+        <n-button @click="submitHandle" type="info" size="large">
+          {{ modalSubmitButtonText }}
+        </n-button>
+      </n-space>
     </template>
   </n-modal>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import { NButton, NH6, NModal, NText } from 'naive-ui';
+  import { NButton, NH5, NModal, NSpace, NText } from 'naive-ui';
 
   export default defineComponent({
     name: 'form-item-interaction-modal',
     components: {
       NModal,
-      NH6,
+      NSpace,
+      NH5,
       NText,
       NButton,
     },
