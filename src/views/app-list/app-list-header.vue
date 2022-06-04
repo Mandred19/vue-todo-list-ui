@@ -1,6 +1,6 @@
 <template>
   <section class="list-header">
-    <n-button type="info" size="large">
+    <n-button @click="openModal" type="info" size="large">
       <template #icon>
         <n-icon>
           <add-icon/>
@@ -10,14 +10,23 @@
     </n-button>
 
     <app-search/>
+
+    <form-item-interaction-modal
+    v-if="isShowModal"
+    @closeModal="isShowModal = false"
+    :showModal="isShowModal"
+    :title="'Create new item'"
+    :resetButtonText="'Close'"
+    :submitButtonText="'Create'"/>
   </section>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref, Ref } from 'vue';
   import { NIcon, NButton } from 'naive-ui';
   import AppSearch from '@/components/app-search/index.vue';
   import { AddFilled as addIcon } from '@vicons/material';
+  import FormItemInteractionModal from '@/views/app-list/form-item-interaction-modal/index.vue';
 
   export default defineComponent({
     name: 'app-app-list-header',
@@ -26,10 +35,20 @@
       NButton,
       NIcon,
       addIcon,
+      FormItemInteractionModal,
     },
 
     setup() {
-      return {};
+      const isShowModal: Ref<boolean> = ref(false);
+
+      const openModal = (): void => {
+        isShowModal.value = true;
+      }
+
+      return {
+        isShowModal,
+        openModal,
+      };
     },
   });
 </script>
