@@ -19,9 +19,7 @@
     :title="'Create new item'"
     :close-button-text="'Close'"
     :submit-button-text="'Create'">
-      <div>
-        123
-      </div>
+      <form-create-list-item/>
     </app-modal>
   </section>
 </template>
@@ -32,6 +30,7 @@
   import AppSearch from '@/components/app-search/index.vue';
   import { AddFilled as addIcon } from '@vicons/material';
   import AppModal from '@/components/app-modal.vue';
+  import FormCreateListItem from '@/views/app-list/form-create-list-item.vue';
 
   export default defineComponent({
     name: 'app-app-list-header',
@@ -41,6 +40,7 @@
       NIcon,
       addIcon,
       AppModal,
+      FormCreateListItem,
     },
 
     setup() {
