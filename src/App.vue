@@ -1,8 +1,8 @@
 <template>
   <n-config-provider
   :locale="enUS"
-  :dateLocale="dateEnUS"
-  :themeOverrides="themeOverrides">
+  :date-locale="dateEnUS"
+  :theme-overrides="themeOverrides">
     <n-space :vertical="true">
       <n-layout>
         <app-header/>

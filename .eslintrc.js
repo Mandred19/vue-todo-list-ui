@@ -9,6 +9,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
   },
+  globals: {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly',
+  },
   rules: {
     'arrow-body-style': 0,
     'camelcase': 0,
@@ -57,7 +63,7 @@ module.exports = {
         'GLOBAL'
       ]
     }],
-    'vue/attribute-hyphenation': [2, 'never', {
+    'vue/attribute-hyphenation': [2, 'always', {
       'ignore': []
     }],
     'vue/html-indent': [2, 2, {

@@ -11,13 +11,18 @@
 
     <app-search/>
 
-    <form-item-interaction-modal
+    <app-modal
     v-if="isShowModal"
-    @closeModal="isShowModal = false"
-    :showModal="isShowModal"
+    @close-handle="isShowModal = false"
+    @submit-handle="isShowModal = false"
+    :show-modal="isShowModal"
     :title="'Create new item'"
-    :resetButtonText="'Close'"
-    :submitButtonText="'Create'"/>
+    :close-button-text="'Close'"
+    :submit-button-text="'Create'">
+      <div>
+        123
+      </div>
+    </app-modal>
   </section>
 </template>
 
@@ -26,7 +31,7 @@
   import { NIcon, NButton } from 'naive-ui';
   import AppSearch from '@/components/app-search/index.vue';
   import { AddFilled as addIcon } from '@vicons/material';
-  import FormItemInteractionModal from '@/views/app-list/form-item-interaction-modal/index.vue';
+  import AppModal from '@/components/app-modal.vue';
 
   export default defineComponent({
     name: 'app-app-list-header',
@@ -35,7 +40,7 @@
       NButton,
       NIcon,
       addIcon,
-      FormItemInteractionModal,
+      AppModal,
     },
 
     setup() {
