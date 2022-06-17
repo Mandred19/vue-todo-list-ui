@@ -64,7 +64,7 @@
 
   .list-header {
     width: 100%;
-    padding: $spacing $spacing * 2;
+    padding: $spacing * 2;
     @include flex-layout(center, flex-start);
     @include between-children {
       margin-right: $spacing * 2;

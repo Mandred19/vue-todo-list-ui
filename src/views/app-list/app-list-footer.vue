@@ -1,5 +1,7 @@
 <template>
-  <div>app-app-list-footer</div>
+  <section class="list-footer">
+    <div>list-footer</div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -16,5 +18,15 @@
 </script>
 
 <style lang="scss">
+  @use "src/styles/variables" as *;
+  @use "src/styles/mixins" as *;
 
+  .list-footer {
+    width: 100%;
+    padding: $spacing $spacing * 2;
+    @include flex-layout(center, flex-end);
+    @include between-children {
+      margin-right: $spacing * 2;
+    }
+  }
 </style>
